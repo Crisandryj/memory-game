@@ -35,7 +35,7 @@ I've learned how to use components to save data and have them intereact with eac
 
 To see how you can add code snippets, see below:
 
-```html
+```jsx
 <div>
   <h1>CV Application</h1>
   <General />
