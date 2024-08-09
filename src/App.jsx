@@ -9,7 +9,10 @@ function App() {
 
   return (
     <>
-      <Image />
+      <div className="images">
+        <Image />
+        <Image />
+      </div>
     </>
   );
 }

@@ -22,10 +22,10 @@ function Image() {
   );
 
   return (
-    <>
-      <h1>{pokemon.name}</h1>
+    <div class="pokemon">
+      <h2>{pokemon.name}</h2>
       <img src={pokemon.img} alt="" />
-    </>
+    </div>
   );
 }
 
