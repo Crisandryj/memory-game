@@ -17,7 +17,18 @@ Users should be able to:
 
 ## My process
 
+-Decide which API I'll be using
+--PokiAPI
+
 -Decide what components need to be created
+--Parent component
+---Function to display images in random order
+
+-Scoreboard component
+
+-Image comp
+--Pull image from pokeAPI
+
 -Figure out the state structure of each component
 -Add style
 -Deploy project
