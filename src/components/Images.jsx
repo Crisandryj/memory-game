@@ -9,13 +9,11 @@ function Image() {
       .json()
       .then(
         (data) => (
-          (setPokemon({
+          setPokemon({
             img: data.sprites.other["official-artwork"].front_default,
             name: data.name,
           }),
-          (pokemonName = data.name)),
-          console.log(pokeImg),
-          console.log(pokemonName)
+          (pokemonName = data.name)
         )
       )
       .catch((err) => {
