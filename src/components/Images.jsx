@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 
-function Image(urlPokeName) {
+function Image(props) {
   const [pokemon, setPokemon] = useState({ img: "", name: "" });
-  const [urlName, setUrlName] = useState(urlPokeName);
-  //urlPoke prop not working
+  const [urlName, setUrlName] = useState(props.name);
+
   fetch(`https://pokeapi.co/api/v2/pokemon/${urlName}`).then((reponse) =>
     reponse
       .json()
-      .then(
-        (data) => (
-          setPokemon({
-            img: data.sprites.other["official-artwork"].front_default,
-            name: data.name,
-          }),
-          (pokemonName = data.name)
-        )
+      .then((data) =>
+        setPokemon({
+          img: data.sprites.other["official-artwork"].front_default,
+          name: data.name,
+        })
       )
       .catch((err) => {
         console.log("Pokemon not found", err);
@@ -23,7 +20,7 @@ function Image(urlPokeName) {
 
   return (
     <div className="pokemon">
-      <h2>{pokemon.name}</h2>
+      <h2>{urlName}</h2>
       <img src={pokemon.img} alt="" />
     </div>
   );

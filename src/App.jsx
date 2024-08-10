@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className="images">
-        <Image urlPokeName="ditto" />
+        <Image name="ditto" />
       </div>
     </>
   );
