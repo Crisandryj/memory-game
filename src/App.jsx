@@ -5,13 +5,10 @@ import "./App.css";
 import Image from "./components/Images";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="images">
-        <Image />
-        <Image />
+        <Image urlPokeName="ditto" />
       </div>
     </>
   );

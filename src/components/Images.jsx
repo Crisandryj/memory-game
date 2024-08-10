@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-function Image() {
+function Image(urlPokeName) {
   const [pokemon, setPokemon] = useState({ img: "", name: "" });
-  const urlPokeName = "ditto";
-
-  fetch(`https://pokeapi.co/api/v2/pokemon/${urlPokeName}`).then((reponse) =>
+  const [urlName, setUrlName] = useState(urlPokeName);
+  //urlPoke prop not working
+  fetch(`https://pokeapi.co/api/v2/pokemon/${urlName}`).then((reponse) =>
     reponse
       .json()
       .then(
@@ -22,7 +22,7 @@ function Image() {
   );
 
   return (
-    <div class="pokemon">
+    <div className="pokemon">
       <h2>{pokemon.name}</h2>
       <img src={pokemon.img} alt="" />
     </div>
