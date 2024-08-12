@@ -18,12 +18,31 @@ const pokemonArray = [
   { name: "primeape", id: uuidv4() },
 ];
 
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
 function App() {
+  const [array, setArray] = useState(pokemonArray);
+
+  const onClick = () => {
+    setArray(shuffleArray(pokemonArray));
+  };
+
   return (
     <>
       <div className="images">
         {pokemonArray.map((pokemon) => {
-          return <Image name={pokemon.name} key={pokemon.id} />;
+          return (
+            <button onClick={onClick} key={pokemon.id}>
+              <Image name={pokemon.name} key={pokemon.id} />
+            </button>
+          );
         })}
       </div>
     </>
