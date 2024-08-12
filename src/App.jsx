@@ -7,15 +7,15 @@ import { v4 as uuidv4 } from "uuid";
 
 const pokemonArray = [
   { name: "venusaur", id: uuidv4() },
-  {name:"charmeleon", id: uuidv4() }
-  {name:"blastoise", id: uuidv4() },
-  {name:"charizard", id: uuidv4() },
-  {name:"beedrill", id: uuidv4() },
-  {name:"Arbok", id: uuidv4() },
-  {name:"Raichu", id: uuidv4() },
-  {name:"Fearow", id: uuidv4() },
-  {name:"clefairy", id: uuidv4() },
-  {name:"primeape", id: uuidv4() }
+  { name: "charmeleon", id: uuidv4() },
+  { name: "blastoise", id: uuidv4() },
+  { name: "charizard", id: uuidv4() },
+  { name: "beedrill", id: uuidv4() },
+  { name: "arbok", id: uuidv4() },
+  { name: "raichu", id: uuidv4() },
+  { name: "fearow", id: uuidv4() },
+  { name: "clefairy", id: uuidv4() },
+  { name: "primeape", id: uuidv4() },
 ];
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <>
       <div className="images">
         {pokemonArray.map((pokemon) => {
-          return <Image name={pokemon.name} key={pokemon.id}/>;
+          return <Image name={pokemon.name} key={pokemon.id} />;
         })}
       </div>
     </>
