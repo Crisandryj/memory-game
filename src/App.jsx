@@ -15,14 +15,13 @@ const pokemonArray = [
   "Clefairy",
   "Primeape",
 ];
-
+//map not showing pokemon images
 function App() {
   return (
     <>
       <div className="images">
         {pokemonArray.map((pokemon) => {
           <Image name={pokemon} />;
-          console.log(pokemon);
         })}
       </div>
     </>
