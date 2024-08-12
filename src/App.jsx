@@ -21,7 +21,7 @@ function App() {
     <>
       <div className="images">
         {pokemonArray.map((pokemon) => {
-          <Image name={pokemon} />;
+          return <Image name={pokemon.toLowerCase()} />;
         })}
       </div>
     </>
