@@ -18,7 +18,7 @@ function Image(props) {
           console.log("Pokemon not found", err);
         })
     );
-  }, [pokemon]);
+  }, [urlName]);
 
   return (
     <div className="pokemon">

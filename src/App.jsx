@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Board from "./components/Board";
 import { v4 as uuidv4 } from "uuid";
+import Score from "./components/Score";
 
 const pokemonArray = [
   { name: "venusaur", id: uuidv4() },
@@ -18,10 +19,27 @@ const pokemonArray = [
   { name: "primeape", id: uuidv4() },
 ];
 
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 function App() {
+  const [arry, setArry] = useState(pokemonArray);
+
+  const onClick = () => {
+    setArry(shuffleArray([...pokemonArray]));
+  };
+
   return (
     <>
-      <Board pokemon={pokemonArray} />
+      <Score onClick={onClick}></Score>
+      <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
     </>
   );
 }
