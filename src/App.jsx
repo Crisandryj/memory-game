@@ -31,14 +31,17 @@ function shuffleArray(array) {
 
 function App() {
   const [arry, setArry] = useState(pokemonArray);
+  let [count, setCount] = useState(0);
 
   const onClick = () => {
     setArry(shuffleArray([...pokemonArray]));
+    let currentCount = (count += 1);
+    setCount(currentCount);
   };
 
   return (
     <>
-      <Score onClick={onClick}></Score>
+      <Score count={count}></Score>
       <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
     </>
   );
