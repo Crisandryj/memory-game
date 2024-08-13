@@ -46,11 +46,6 @@ img {
   width: 100px;
 }
 
-.pokemon {
-  border-color: blue;
-  border-style: solid;
-}
-
 .images {
   display: flex;
   gap: 10px;
