@@ -1,12 +1,9 @@
 import Image from "./Images";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Board(props) {
-  const [arry, setArry] = useState([
-    { name: "venusaur", id: uuidv4() },
-    { name: "charmeleon", id: uuidv4() },
-  ]);
+  const [arry, setArry] = useState([{ name: "venusaur", id: uuidv4() }]);
 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -18,7 +15,7 @@ function Board(props) {
     return array;
   }
   const onClick = () => {
-    setArry(shuffleArray(props.pokemon));
+    setArry(shuffleArray([...props.pokemon]));
   };
 
   return (
