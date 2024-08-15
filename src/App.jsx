@@ -28,7 +28,7 @@ function shuffleArray(array) {
   }
   return array;
 }
-//venusuar is undefined src?
+
 function App() {
   const [arry, setArry] = useState(pokemonArray);
   let [count, setCount] = useState(0);
@@ -39,6 +39,7 @@ function App() {
     console.log(e.target.src);
     setArry(shuffleArray([...pokemonArray]));
     setSource([...source, e.target.src]);
+    //track score of consecutive clicks without repeating pokemon
     if (source.includes(e.target.src)) {
       console.log("hello");
       setCount(0);
@@ -47,7 +48,7 @@ function App() {
       setCount((count += 1));
     }
   };
-  console.log(source);
+
   return (
     <>
       <Score count={count}></Score>
