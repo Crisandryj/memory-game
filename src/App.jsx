@@ -39,9 +39,9 @@ function App() {
     console.log(e.target.src);
     setArry(shuffleArray([...pokemonArray]));
     setSource([...source, e.target.src]);
+
     //track score of consecutive clicks without repeating pokemon
     if (source.includes(e.target.src)) {
-      console.log("hello");
       setCount(0);
       setSource([]);
     } else {
