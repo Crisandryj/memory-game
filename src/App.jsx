@@ -41,6 +41,7 @@ function App() {
     e.preventdefault;
     console.log(e.target.src);
     setArry(shuffleArray([...pokemonArray]));
+
     setSource([...source, e.target.src]);
 
     //track score of consecutive clicks without repeating pokemon
@@ -56,7 +57,7 @@ function App() {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <Score count={count} score={score}></Score>
       <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
     </div>

@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 
 function Image(props) {
   const [pokemon, setPokemon] = useState({ img: "", name: "" });
-  const [urlName, setUrlName] = useState(props.name);
 
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${urlName}`).then((reponse) =>
+  function getPokemon() {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`).then((reponse) =>
       reponse
         .json()
         .then((data) =>
@@ -18,11 +17,15 @@ function Image(props) {
           console.log("Pokemon not found", err);
         })
     );
-  }, [urlName]);
+  }
+
+  useEffect(() => {
+    getPokemon();
+  });
 
   return (
     <div className="pokemon">
-      <h2>{urlName}</h2>
+      <h2>{pokemon.name.toUpperCase()}</h2>
       <img src={pokemon.img} alt="" />
     </div>
   );
