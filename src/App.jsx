@@ -17,6 +17,8 @@ const pokemonArray = [
   { name: "fearow", id: uuidv4() },
   { name: "clefairy", id: uuidv4() },
   { name: "primeape", id: uuidv4() },
+  { name: "ninetales", id: uuidv4() },
+  { name: "butterfree", id: uuidv4() },
 ];
 
 function shuffleArray(array) {
@@ -54,10 +56,10 @@ function App() {
   };
 
   return (
-    <>
+    <div class="container">
       <Score count={count} score={score}></Score>
       <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
-    </>
+    </div>
   );
 }
 
