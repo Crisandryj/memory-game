@@ -33,6 +33,7 @@ function App() {
   const [arry, setArry] = useState(pokemonArray);
   let [count, setCount] = useState(0);
   const [source, setSource] = useState([]);
+  const [score, setScore] = useState(0);
 
   const onClick = (e) => {
     e.preventdefault;
@@ -42,6 +43,9 @@ function App() {
 
     //track score of consecutive clicks without repeating pokemon
     if (source.includes(e.target.src)) {
+      if (count > score) {
+        setScore(count);
+      }
       setCount(0);
       setSource([]);
     } else {
@@ -51,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Score count={count}></Score>
+      <Score count={count} score={score}></Score>
       <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
     </>
   );
