@@ -28,17 +28,26 @@ function shuffleArray(array) {
   }
   return array;
 }
-
+//venusuar is undefined src?
 function App() {
   const [arry, setArry] = useState(pokemonArray);
   let [count, setCount] = useState(0);
+  const [source, setSource] = useState([]);
 
-  const onClick = () => {
+  const onClick = (e) => {
+    e.preventdefault;
+    console.log(e.target.src);
     setArry(shuffleArray([...pokemonArray]));
-    let currentCount = (count += 1);
-    setCount(currentCount);
+    setSource([...source, e.target.src]);
+    if (source.includes(e.target.src)) {
+      console.log("hello");
+      setCount(0);
+      setSource([]);
+    } else {
+      setCount((count += 1));
+    }
   };
-
+  console.log(source);
   return (
     <>
       <Score count={count}></Score>
