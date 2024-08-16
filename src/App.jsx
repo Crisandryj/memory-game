@@ -19,6 +19,14 @@ const pokemonArray = [
   { name: "primeape", id: uuidv4() },
   { name: "ninetales", id: uuidv4() },
   { name: "butterfree", id: uuidv4() },
+  { name: "ekans", id: uuidv4() },
+  { name: "pidgeotto", id: uuidv4() },
+  { name: "weedle", id: uuidv4() },
+  { name: "nidoking", id: uuidv4() },
+  { name: "sandshrew", id: uuidv4() },
+  { name: "nidoqueen", id: uuidv4() },
+  { name: "venonat", id: uuidv4() },
+  { name: "clefairy", id: uuidv4() },
 ];
 
 function shuffleArray(array) {
