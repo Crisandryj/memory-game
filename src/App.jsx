@@ -22,9 +22,9 @@ const pokemonArray = [
 ];
 
 function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
@@ -36,6 +36,11 @@ function App() {
   let [count, setCount] = useState(0);
   const [source, setSource] = useState([]);
   const [score, setScore] = useState(0);
+  const [showGame, setShowGame] = useState("false");
+
+  const handleStartGameClick = () => {
+    setShowGame(true);
+  };
 
   const onClick = (e) => {
     e.preventdefault;
@@ -57,12 +62,29 @@ function App() {
     }
   };
 
-  return (
-    <div className="container">
-      <Score count={count} score={score}></Score>
-      <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
-    </div>
-  );
+  if (showGame == true) {
+    return (
+      <div className="container">
+        <Score count={count} score={score}></Score>
+        <Board pokemon={pokemonArray} onClick={onClick} arry={arry} />
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <h1>WELCOME TO THE MEMORY GAME</h1>
+        <p>
+          The task is simple. Select as many pokemon as you can without
+          repeating a previous selection. Can you get all 12?
+        </p>
+        <p>Count will restart when selection repeated.</p>
+        <p>Good Luck!</p>
+        <button id="start" onClick={handleStartGameClick}>
+          Start Game
+        </button>
+      </>
+    );
+  }
 }
 
 export default App;
