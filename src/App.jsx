@@ -38,19 +38,17 @@ function App() {
   const [score, setScore] = useState(0);
 
   const onClick = (e) => {
+    e.preventdefault;
     if (e.target.matches("img")) {
-      e.preventdefault;
-      console.log(e.target.src);
       setArry(shuffleArray([...pokemonArray]));
       setSource([...source, e.target.src]);
 
       //track score of consecutive clicks without repeating pokemon
       if (source.includes(e.target.src)) {
+        setCount(0);
+        setSource([]);
         if (count > score) {
           setScore(count);
-          console.log(source);
-          setCount(0);
-          setSource([]);
         }
       } else {
         setCount((count += 1));
