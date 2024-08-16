@@ -24,10 +24,10 @@ function Image(props) {
   });
 
   return (
-    <div className="pokemon">
+    <>
       <h2>{pokemon.name.toUpperCase()}</h2>
       <img src={pokemon.img} alt="" />
-    </div>
+    </>
   );
 }
 
