@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Board from "./components/Board";
 import { v4 as uuidv4 } from "uuid";
@@ -26,7 +24,7 @@ const pokemonArray = [
   { name: "sandshrew", id: uuidv4() },
   { name: "nidoqueen", id: uuidv4() },
   { name: "venonat", id: uuidv4() },
-  { name: "clefairy", id: uuidv4() },
+  { name: "jigglypuff", id: uuidv4() },
 ];
 
 function shuffleArray(array) {
@@ -83,7 +81,7 @@ function App() {
         <h1>WELCOME TO THE MEMORY GAME</h1>
         <p>
           The task is simple. Select as many pokemon as you can without
-          repeating a previous selection. Can you get all 12?
+          repeating a previous selection. Can you get all 20?
         </p>
         <p>Count will restart when selection repeated.</p>
         <p>Good Luck!</p>
