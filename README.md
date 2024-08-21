@@ -13,7 +13,7 @@
 
 Users should be able to:
 
-- Submit and update each section or for CV
+- Select a card at random and have the cards shuffle each time.
 
 ## My process
 
@@ -47,18 +47,25 @@ I've learned how to use components to save data and have them intereact with eac
 To see how you can add code snippets, see below:
 
 ```jsx
-<div>
-  <h1>CV Application</h1>
-  <General />
-  <Education key="{uuidv4()}" />
-  {edStack.map((comp) => comp.src)}
-  <button onClick="{onClickAdd}">+</button>
-  <button onClick="{onClickDelete}">-</button>
-  <Experience />
-  {expStack.map((comp) => comp.src)}
-  <button onClick="{onClickAddExp}">+</button>
-  <button onClick="{onClickDeleteExp}">-</button>
-</div>
+const onClick = (e) => {
+  e.preventdefault;
+  if (e.target.matches("img")) {
+    setArry(shuffleArray([...pokemonArray]));
+    setSource([...source, e.target.src]);
+
+    //track score of consecutive clicks without repeating pokemon
+    if (source.includes(e.target.src)) {
+      setCount(0);
+      setSource([]);
+      if (count > score) {
+        setScore(count);
+      }
+    } else {
+      setCount((count += 1));
+      console.log(source);
+    }
+  }
+};
 ```
 
 ### Continued development
