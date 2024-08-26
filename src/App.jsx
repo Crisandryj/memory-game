@@ -67,7 +67,7 @@ function App() {
       }
     }
   };
-
+  //display game after home screen
   if (showGame == true) {
     return (
       <div className="container">
