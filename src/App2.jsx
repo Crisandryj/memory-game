@@ -1,5 +1,3 @@
-// App.test.jsx
-
 import { useState } from "react";
 
 const App = () => {
